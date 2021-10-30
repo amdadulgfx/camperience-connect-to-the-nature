@@ -3,6 +3,8 @@ import './App.css';
 import AuthProvider from './contexts/AuthProvider';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import RegisterCamp from './Pages/RegisterCamp/RegisterCamp';
 import Footer from './Pages/Shared/Footer/Footer';
 import NavigationBar from './Pages/Shared/NavigationBar/NavigationBar';
 
@@ -22,6 +24,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+          <PrivateRoute path='/registerCamp/:serviceId'>
+            <RegisterCamp></RegisterCamp>
+          </PrivateRoute>
         </Switch>
         <Footer></Footer>
       </Router>

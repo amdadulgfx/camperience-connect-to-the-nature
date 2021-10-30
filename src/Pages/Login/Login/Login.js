@@ -22,9 +22,9 @@ const Login = () => {
     return (
         <Container>
 
-            <div className=''>
+            <div className='text-center border border-success py-5 my-5'>
                 <h1>Please Log In</h1>
-                <Button
+                <Button className='button-color border-0'
                     onClick={handleGoogleSignIn}
                 >Sign In With Google</Button>
             </div>

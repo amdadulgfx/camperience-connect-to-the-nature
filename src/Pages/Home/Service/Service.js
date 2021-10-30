@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Service.css'
 const Serivice = (props) => {
-    const { title, img, description } = props.service;
+    const { _id, title, img, description } = props.service;
     return (
         <div>
             <Col>
@@ -13,7 +14,8 @@ const Serivice = (props) => {
                         <Card.Text className='description'>
                             {description.slice(0, 100)}...
                         </Card.Text>
-                        <Button className='button-color border-0'>REGISTER FOR CAMP</Button>
+                        <Link to={`/registerCamp/${_id}`}>
+                            <Button className='button-color border-0'>REGISTER FOR CAMP</Button></Link>
                     </Card.Body>
                 </Card>
             </Col>
