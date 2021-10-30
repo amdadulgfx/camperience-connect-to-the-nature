@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './Pages/Home/Home/Home';
-import NavigationBar from './Pages/Home/NavigationBar/NavigationBar';
+import Footer from './Pages/Shared/Footer/Footer';
+import NavigationBar from './Pages/Shared/NavigationBar/NavigationBar';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Home></Home>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );

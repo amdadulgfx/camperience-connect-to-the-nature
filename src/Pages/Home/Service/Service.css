@@ -1,0 +1,13 @@
+.card-img{
+    height: 250px;
+    object-fit: cover;
+}
+.description{
+    height: 80px;
+}
+.button-color{
+    background-color: #637F42;
+}
+.button-color:hover{
+    background-color: #3B6B35;
+}
