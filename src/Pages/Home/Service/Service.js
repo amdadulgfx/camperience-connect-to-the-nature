@@ -3,11 +3,8 @@ import { Card, Col, Button } from 'react-bootstrap';
 import './Service.css'
 const Serivice = (props) => {
     const { title, img, description } = props.service;
-    console.log(title);
     return (
         <div>
-
-
             <Col>
                 <Card className='text-center'>
                     <Card.Img variant="top" src={img} className='card-img' />
@@ -20,8 +17,6 @@ const Serivice = (props) => {
                     </Card.Body>
                 </Card>
             </Col>
-
-
         </div>
     );
 };

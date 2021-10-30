@@ -1,11 +1,13 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import useAuth from '../../../hooks/useAuth';
+import './NavigationBar.css'
 const NavigationBar = () => {
+    const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar collapseOnSelect bg="light" expand="lg" fixed="top" className='text-white'>
+            <Navbar collapseOnSelect bg="light" expand="lg" className='text-white nav-sticky'>
                 <Container>
                     <Navbar.Brand href="#home"><b> <span>CAMP</span><span style={{ color: '#637F42' }}>ERIENCE</span> </b></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -18,7 +20,10 @@ const NavigationBar = () => {
                             ps-2'>CONTACT</Link>
                         </Nav>
                         <Nav>
-                            <Link to="/login" className='text-decoration-none text-dark'>Log In</Link>
+                            {
+                                user.email ? <div> <span className='text-success'>Hello, {user.displayName} </span> <Link to="/" onClick={logOut} className='text-decoration-none text-dark'>Log Out</Link> </div> : <Link to="/login" className='text-decoration-none text-dark'>Log In</Link>
+                            }
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
