@@ -14,10 +14,17 @@ const NavigationBar = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto ">
                             <Link to="/home" className='text-decoration-none text-dark '>HOME</Link>
-                            <Link to="/gallery" className='text-decoration-none text-dark 
-                            ps-2'>GALLERY</Link>
-                            <Link to="/contact" className='text-decoration-none text-dark 
-                            ps-2'>CONTACT</Link>
+                            {
+                                user.email ? <div><span className='text-success ps-2'>|</span>
+                                    <Link to="/myCamps" className='text-decoration-none text-dark 
+                                ps-2'>My Camps</Link> <span className='text-success'>|</span>
+                                    <Link to="/manageCamps" className='text-decoration-none text-dark 
+                                ps-2'>Manage Camps</Link> <span className='text-success'>|</span>
+                                    <Link to="/addNewCamp" className='text-decoration-none text-dark 
+                                ps-2'>Add New Camp</Link>
+                                </div> : <div></div>
+
+                            }
                         </Nav>
                         <Nav>
                             {
