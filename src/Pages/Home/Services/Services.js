@@ -8,7 +8,7 @@ import Service from '../Service/Service';
 const Services = () => {
     const { services } = useCampService();
     const { isLoading } = useAuth();
-    const topServices = services.slice(0, 6);
+    // const topServices = services.slice(0, 6);
     if (isLoading) {
         return <div className='d-flex justify-content-center align-items-center' style={{ height: '500px' }}> <Spinner animation="border" variant="primary" /> </div>
 
@@ -18,7 +18,7 @@ const Services = () => {
             <h1 className='my-5 text-center'>An amazing camping experience for new generations with everyday activities</h1>
             <Row xs={1} md={3} className="g-4">
                 {
-                    topServices.map(service => <Service
+                    services.map(service => <Service
                         key={service.title}
                         service={service}
                     >

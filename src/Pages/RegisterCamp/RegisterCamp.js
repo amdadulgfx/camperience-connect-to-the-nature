@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
@@ -9,8 +10,18 @@ const RegisterCamp = () => {
     const { serviceId } = useParams();
     const { user } = useAuth();
     const [service, setService] = useState({});
-    const { register, handleSubmit, setFocus, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, setFocus, reset, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        axios.post('http://localhost:5000/registrations', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('Registration successfull');
+                    reset();
+                }
+            })
+
+    };
     useEffect(() => {
         const url = `https://shrouded-journey-47554.herokuapp.com/services/${serviceId}`;
         fetch(url)
