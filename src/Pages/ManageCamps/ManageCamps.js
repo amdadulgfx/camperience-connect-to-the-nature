@@ -5,12 +5,15 @@ import useAuth from '../../hooks/useAuth';
 const ManageCamps = () => {
     const [camps, setCamps] = useState([]);
     const { user } = useAuth();
-    const myCamps = camps.filter(camp => camp.email === user.email);
+    // const myCamps = camps.filter(camp => camp.email === user.email);
     useEffect(() => {
         fetch('http://localhost:5000/registrations')
             .then(res => res.json())
             .then(data => setCamps(data))
     }, [])
+
+
+
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to cancel this camp?')
         if (proceed) {
@@ -23,13 +26,35 @@ const ManageCamps = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
-                        const remainingUsers = camps.filter(camp => camp._id !== id)
-                        console.log(remainingUsers);
-                        setCamps(remainingUsers)
+                        alert('Cancelled successfully');
+                        const remainingCamps = camps.filter(camp => camp._id !== id)
+                        setCamps(remainingCamps)
                     }
                 })
         }
+    }
+    const handleApproval = (id) => {
+
+        const url = `http://localhost:5000/registrations/${id}`;
+        fetch(url, {
+            method: "PUT",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    alert('Updated');
+                    fetch('http://localhost:5000/registrations')
+                        .then(res => res.json())
+                        .then(data => setCamps(data))
+                    // const updateCamps = camps.filter(camp => camp.status === "Approved")
+                    // console.log(updateCamps);
+                    // setCamps(updateCamps);
+                }
+            })
+            .catch()
+
     }
     return (
         <Container>
@@ -52,10 +77,16 @@ const ManageCamps = () => {
                                 <td>{camps.indexOf(myCamp) + 1}</td>
                                 <td>{myCamp.camp}</td>
                                 <td>{myCamp.email}</td>
-                                <td></td>
-                                <Button
-                                    onClick={() => handleDelete(myCamp._id)}
-                                    variant='outline-danger'>Cancel</Button>
+                                <td>{myCamp.status}</td>
+                                <td> {
+                                    myCamp.status === "Pending" ? <Button size='sm'
+                                        onClick={() => handleApproval(myCamp._id)}
+                                        variant='outline-success'>Approve</Button> : <Button variant='outline-success' disabled size='sm'>Approve</Button>
+                                }
+                                    <Button size='sm' className='ms-1'
+                                        onClick={() => handleDelete(myCamp._id)}
+                                        variant='outline-danger'>Cancel</Button></td>
+
                             </tr>
                         )
                     }

@@ -24,7 +24,7 @@ const MyCamps = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
+                        alert('Cancelled successfully');
                         const remainingUsers = camps.filter(camp => camp._id !== id)
                         console.log(remainingUsers);
                         setCamps(remainingUsers)
@@ -32,11 +32,12 @@ const MyCamps = () => {
                 })
         }
     }
+
     return (
 
         <Container>
             <h3 className='text-center'>My Upcoming Camps</h3>
-            <Table >
+            <Table bordered>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -52,7 +53,7 @@ const MyCamps = () => {
                             <tr key={myCamp._id}>
                                 <td>{myCamps.indexOf(myCamp) + 1}</td>
                                 <td>{myCamp.camp}</td>
-                                <td></td>
+                                <td>{myCamp.status}</td>
                                 <Button
                                     onClick={() => handleDelete(myCamp._id)}
                                     variant='outline-danger'>Cancel</Button>

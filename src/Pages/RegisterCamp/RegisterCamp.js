@@ -13,7 +13,7 @@ const RegisterCamp = () => {
     const { register, handleSubmit, setFocus, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/registrations', data)
+        axios.post('http://localhost:5000/registrations', { ...data, status: "Pending" })
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Registration successfull');
