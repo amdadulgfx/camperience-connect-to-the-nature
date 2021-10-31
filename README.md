@@ -8,10 +8,10 @@ This is a MERN(MongoDB, Express Js, React Js, Node Js) Project.
 
 ## Features and Functionality
 
-1. Firebase Authentication
-2. Login With Google
-3. Register For Camp Service
-4. Add new Camp Service Details
-5. Cancel Registration
-6. Approval system
-7. Managing All users Data
+* Firebase Authentication
+* Login With Google
+* Register For Camp Service
+* Add new Camp Service Details
+* Cancel Registration
+* Approval system
+* Managing All users Data
