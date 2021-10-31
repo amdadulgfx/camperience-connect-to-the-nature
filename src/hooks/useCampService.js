@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useCampService = () => {
     const [services, setServices] = useState([]);
     const [camps, setCamps] = useState([]);
+    const [isLoading, setIsloading] = useState(true);
+
     useEffect(() => {
+        setIsloading(true)
         fetch('https://shrouded-journey-47554.herokuapp.com/camps')
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => {
+                setServices(data)
+                setIsloading(false)
+            })
+
     }, [])
     useEffect(() => {
         fetch('https://shrouded-journey-47554.herokuapp.com/registrations')
@@ -16,7 +23,9 @@ const useCampService = () => {
     return {
         services,
         camps,
-        setCamps
+        setCamps,
+        isLoading,
+        setIsloading
     };
 };
 

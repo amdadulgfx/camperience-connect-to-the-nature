@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 
 import { Container, Row, Spinner } from 'react-bootstrap';
-import useAuth from '../../../hooks/useAuth';
+// import useAuth from '../../../hooks/useAuth';
 import useCampService from '../../../hooks/useCampService';
 import Service from '../Service/Service';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Services = () => {
-    const { services } = useCampService();
-    const { isLoading } = useAuth();
+    const { services, isLoading } = useCampService();
+
     useEffect(() => {
         AOS.init();
     }, [])

@@ -41,7 +41,7 @@ const RegisterCamp = () => {
     return (
         <Container className='py-5' data-aos="zoom-in">
             <h2 className='text-center mt-5'>Register Your Favourite Camp</h2>
-            <Row className='my-5'>
+            <Row className='my-5' xs={1} sm={1} md={2}>
                 <Col>
                     <img className='reg-img' src={img} alt="" />
                     <h3>{title}</h3>

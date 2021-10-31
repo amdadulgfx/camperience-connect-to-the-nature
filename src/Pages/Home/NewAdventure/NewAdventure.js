@@ -5,21 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const NewAdventure = () => {
-    const [seconds, setSeconds] = useState(60)
 
-
-    const timer = setTimeout(function () {
-        const countDown = seconds - 1;
-        setSeconds(countDown)
-    }, 1500);
-    // timer();
-
-
-    if (seconds === 0) {
-        clearTimeout(timer);
-
-
-    }
     useEffect(() => {
         AOS.init();
     }, [])
@@ -32,7 +18,7 @@ const NewAdventure = () => {
                     <div>20 <small>DAYS</small></div>
                     <div>17 <small>HOURS</small></div>
                     <div>19 <small>MINUTES</small></div>
-                    <div>{seconds} <small>SECONDS</small></div>
+                    <div>60 <small>SECONDS</small></div>
                 </Col>
             </Row>
         </div>
