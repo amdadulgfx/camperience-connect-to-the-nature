@@ -4,12 +4,12 @@ const useCampService = () => {
     const [services, setServices] = useState([]);
     const [camps, setCamps] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://shrouded-journey-47554.herokuapp.com/camps')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/registrations')
+        fetch('https://shrouded-journey-47554.herokuapp.com/registrations')
             .then(res => res.json())
             .then(data => setCamps(data))
     }, [])

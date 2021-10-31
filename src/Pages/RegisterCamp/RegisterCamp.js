@@ -13,7 +13,7 @@ const RegisterCamp = () => {
     const { register, handleSubmit, setFocus, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/registrations', { ...data, status: "Pending" })
+        axios.post('https://shrouded-journey-47554.herokuapp.com/registrations', { ...data, status: "Pending" })
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Registration successfull');
@@ -23,7 +23,7 @@ const RegisterCamp = () => {
 
     };
     useEffect(() => {
-        const url = `https://shrouded-journey-47554.herokuapp.com/services/${serviceId}`;
+        const url = `https://shrouded-journey-47554.herokuapp.com/camps/${serviceId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))

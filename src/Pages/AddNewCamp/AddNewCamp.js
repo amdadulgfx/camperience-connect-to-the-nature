@@ -8,7 +8,7 @@ const AddNewCamp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/services', data)
+        axios.post('https://shrouded-journey-47554.herokuapp.com/camps', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Camp Added successfully');
