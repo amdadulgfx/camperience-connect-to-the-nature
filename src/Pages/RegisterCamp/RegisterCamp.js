@@ -59,7 +59,7 @@ const RegisterCamp = () => {
 
                             <input defaultValue={service.title} {...register("camp", { required: true })} />
                             <p>Date:(dd-mm-yyyy)</p>
-                            <input  {...register("date", { required: true })} />
+                            <input type='date' {...register("date", { required: true })} />
                             <br />
                             <br />
                             <input className='button-color border-0 text-white mt-2' type="submit" />

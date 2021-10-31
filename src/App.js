@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider';
+import AddNewCamp from './Pages/AddNewCamp/AddNewCamp';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
@@ -34,6 +35,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path='/manageCamps'>
             <ManageCamps></ManageCamps>
+          </PrivateRoute>
+          <PrivateRoute path='/addNewCamp'>
+            <AddNewCamp></AddNewCamp>
           </PrivateRoute>
         </Switch>
         <Footer></Footer>

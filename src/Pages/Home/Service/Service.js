@@ -12,7 +12,7 @@ const Serivice = (props) => {
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text className='description'>
-                            {description.slice(0, 100)}...
+                            {description?.slice(0, 100)}...
                         </Card.Text>
                         <Link to={`/registerCamp/${_id}`}>
                             <Button className='button-color border-0'>REGISTER FOR CAMP</Button></Link>

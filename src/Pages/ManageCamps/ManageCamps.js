@@ -59,7 +59,7 @@ const ManageCamps = () => {
     return (
         <Container>
             <h3 className='text-center'>Manage Registered Camps</h3>
-            <Table bordered  >
+            <Table bordered responsive >
                 <thead>
                     <tr>
                         <th>#</th>
@@ -81,7 +81,7 @@ const ManageCamps = () => {
                                 <td> {
                                     myCamp.status === "Pending" ? <Button size='sm'
                                         onClick={() => handleApproval(myCamp._id)}
-                                        variant='outline-success'>Approve</Button> : <Button variant='outline-success' disabled size='sm'>Approve</Button>
+                                        variant='outline-success'>Approve</Button> : <Button variant='success' disabled size='sm'>Approve</Button>
                                 }
                                     <Button size='sm' className='ms-1'
                                         onClick={() => handleDelete(myCamp._id)}

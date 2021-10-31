@@ -52,11 +52,14 @@ const MyCamps = () => {
 
                             <tr key={myCamp._id}>
                                 <td>{myCamps.indexOf(myCamp) + 1}</td>
-                                <td>{myCamp.camp}</td>
-                                <td>{myCamp.status}</td>
-                                <Button
-                                    onClick={() => handleDelete(myCamp._id)}
-                                    variant='outline-danger'>Cancel</Button>
+                                <td >{myCamp.camp}</td>
+                                <td className='success'>{myCamp.status}</td>
+                                <td>
+
+                                    <Button size='sm'
+                                        onClick={() => handleDelete(myCamp._id)}
+                                        variant='outline-danger'>Cancel</Button>
+                                </td>
                             </tr>
                         )
                     }
