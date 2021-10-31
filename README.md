@@ -3,6 +3,8 @@ Live Site: https://camperience-6e1ea.web.app/
 
 Camperience is a platform where people can find camping services. For every ages these camps are designed.
 
+This is a MERN(MongoDB, Express Js, React Js, Node Js) Project.
+
 
 ## Features and Functionality
 
