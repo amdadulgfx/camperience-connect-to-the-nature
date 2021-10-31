@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Container, Row, Spinner } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import useCampService from '../../../hooks/useCampService';
 import Service from '../Service/Service';
-
+import AOS from 'aos';
+import 'aos/dist/aos';
 const Services = () => {
     const { services } = useCampService();
     const { isLoading } = useAuth();
-    // const topServices = services.slice(0, 6);
+    useEffect(() => {
+        AOS.init();
+    }, [])
     if (isLoading) {
         return <div className='d-flex justify-content-center align-items-center' style={{ height: '500px' }}> <Spinner animation="border" variant="primary" /> </div>
 
     }
     return (
-        <Container className='mb-5'>
+        <Container className='mb-5' data-aos="fade-up" data-aos-delay="500" >
             <h1 className='my-5 text-center'>An amazing camping experience for new generations with everyday activities</h1>
             <Row xs={1} md={3} className="g-4">
                 {

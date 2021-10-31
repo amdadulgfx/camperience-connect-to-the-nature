@@ -48,9 +48,7 @@ const ManageCamps = () => {
                     fetch('https://shrouded-journey-47554.herokuapp.com/registrations')
                         .then(res => res.json())
                         .then(data => setCamps(data))
-                    // const updateCamps = camps.filter(camp => camp.status === "Approved")
-                    // console.log(updateCamps);
-                    // setCamps(updateCamps);
+
                 }
             })
             .catch()

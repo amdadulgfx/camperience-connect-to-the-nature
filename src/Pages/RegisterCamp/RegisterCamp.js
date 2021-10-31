@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import './RegisterCamp.css';
 const RegisterCamp = () => {
 
@@ -38,31 +38,31 @@ const RegisterCamp = () => {
             <h2 className='text-center mt-5'>Register Your Favourite Camp</h2>
             <Row className='my-5'>
                 <Col>
-                    <img style={{ height: '320px', width: '450px', objectFit: 'cover' }} src={img} alt="" />
+                    <img className='reg-img' src={img} alt="" />
                     <h3>{title}</h3>
                     <p><b>Description:</b> {description}</p>
                 </Col>
                 <Col>
                     <Form onSubmit={handleSubmit(onSubmit)} className='d-flex  justify-content-end'>
                         <div className='shadow w-100 p-3 mb-5 bg-body rounded reg-form'>
-                            <p>Name:</p>
+                            Name:
 
                             <input defaultValue={user.displayName} {...register("name", { required: true })} />
                             <br />
-                            <p>Email:</p>
+                            Email:
                             <input defaultValue={user.email} {...register("email", { required: true })} />
                             <br />
-                            <p>Address:</p>
+                            Address:
                             <input  {...register("address", { required: true })} />
                             <br />
-                            <p>Camp Title: </p>
+                            Camp Title:
 
                             <input defaultValue={service.title} {...register("camp", { required: true })} />
-                            <p>Date:(dd-mm-yyyy)</p>
+                            Date:
                             <input type='date' {...register("date", { required: true })} />
                             <br />
                             <br />
-                            <input className='button-color border-0 text-white mt-2' type="submit" />
+                            <Button className='button-color border-0 text-white mt-2' type="submit" >Add This Camp</Button>
                         </div>
 
                     </Form>

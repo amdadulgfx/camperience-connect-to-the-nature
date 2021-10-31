@@ -1,3 +1,14 @@
 .reg-form input, textarea{
  width: 100%;
+border-left: 2px solid green ;
+border-right: none;
+border-top: none;
+border-bottom: none;
+background-color: azure;
+}
+.reg-img {
+     height: 320px;
+     width: 280px;
+     object-fit: cover;
+     overflow-x: hidden;
 }
