@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import useCampService from '../../../hooks/useCampService';
 import Service from '../Service/Service';
 import AOS from 'aos';
-import 'aos/dist/aos';
+import 'aos/dist/aos.css';
 const Services = () => {
     const { services } = useCampService();
     const { isLoading } = useAuth();
@@ -17,8 +17,8 @@ const Services = () => {
 
     }
     return (
-        <Container className='mb-5' data-aos="fade-up" data-aos-delay="500" >
-            <h1 className='my-5 text-center'>An amazing camping experience for new generations with everyday activities</h1>
+        <Container className='mb-5' data-aos="fade-up"  >
+            <h1 className='my-5 text-center'>An amazing <span style={{ color: '#637F42' }}>camping experience</span>  for new generations with everyday activities</h1>
             <Row xs={1} md={3} className="g-4">
                 {
                     services.map(service => <Service

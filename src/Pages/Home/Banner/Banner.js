@@ -13,7 +13,7 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption >
-                        <h3 className='fs-2'>DREAM BIG</h3>
+                        <h3 className='fs-2 fw-bolder'>DREAM BIG</h3>
                         <p className='fs-4'>Explore Every Beautiful <b>Destinations</b></p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -24,7 +24,7 @@ const Banner = () => {
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h3 className='fs-2'>TRAVEL STYLES</h3>
+                        <h3 className='fs-2 fw-bolder'>TRAVEL STYLES</h3>
                         <p className='fs-4'>The Right Tour for the Right <b>Traveler</b></p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -35,7 +35,7 @@ const Banner = () => {
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3 className='fs-2'>ADVENTURE</h3>
+                        <h3 className='fs-2 fw-bolder'>ADVENTURE</h3>
                         <p className='fs-4'>Travel More, Create More <b>Memories</b></p>
                     </Carousel.Caption>
                 </Carousel.Item>

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import './NewAdventure.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const NewAdventure = () => {
     const [seconds, setSeconds] = useState(60)
@@ -18,10 +20,12 @@ const NewAdventure = () => {
 
 
     }
-
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
     return (
-        <div className='bg-img text-center text-white p-5'>
+        <div className='bg-img text-center text-white p-5' data-aos="fade-up">
             <h1 className='fw-bolder'>NEW ADVENTURES BEGIN IN</h1>
             <Row>
                 <Col className='d-flex flex-column fs-1 fw-bolder'>

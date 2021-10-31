@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Button, Table } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ManageCamps = () => {
     const [camps, setCamps] = useState([]);
     const { user } = useAuth();
@@ -12,7 +13,9 @@ const ManageCamps = () => {
             .then(data => setCamps(data))
     }, [])
 
-
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to cancel this camp?')
@@ -55,8 +58,8 @@ const ManageCamps = () => {
 
     }
     return (
-        <Container>
-            <h3 className='text-center'>Manage Registered Camps</h3>
+        <Container className='py-5' data-aos="zoom-in">
+            <h3 className='text-center py-5'>Manage Registered Camps</h3>
             <Table bordered responsive >
                 <thead>
                     <tr>

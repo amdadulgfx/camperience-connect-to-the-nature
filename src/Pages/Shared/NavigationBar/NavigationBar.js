@@ -7,7 +7,7 @@ const NavigationBar = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <Navbar collapseOnSelect bg="light" expand="lg" className='text-white nav-sticky'>
+            <Navbar collapseOnSelect bg="light" expand="lg" fixed="top" className='text-white'>
                 <Container>
                     <Navbar.Brand href="#home"><b> <span>CAMP</span><span style={{ color: '#637F42' }}>ERIENCE</span> </b></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -40,3 +40,4 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
+

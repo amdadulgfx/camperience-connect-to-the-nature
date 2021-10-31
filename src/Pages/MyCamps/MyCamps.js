@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container, Table, Button } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 // import useCampService from '../../hooks/useCampService';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MyCamps = () => {
     const [camps, setCamps] = useState([]);
@@ -11,6 +13,9 @@ const MyCamps = () => {
         fetch('https://shrouded-journey-47554.herokuapp.com/registrations')
             .then(res => res.json())
             .then(data => setCamps(data))
+    }, [])
+    useEffect(() => {
+        AOS.init();
     }, [])
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to cancel this camp?')
@@ -35,8 +40,8 @@ const MyCamps = () => {
 
     return (
 
-        <Container>
-            <h3 className='text-center'>My Upcoming Camps</h3>
+        <Container className='py-5' data-aos="zoom-in">
+            <h3 className='text-center py-5'>My Upcoming Camps</h3>
             <Table bordered>
                 <thead>
                     <tr>
