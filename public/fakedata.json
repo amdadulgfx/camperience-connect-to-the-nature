@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Family Caravan",
+        "img": "https://i.ibb.co/q15mCmC/camping-1.jpg",
+        "price": 200,
+        "location": "Home Farm, High Wycombe, Buckinghamshire",
+        "duration": "3days",
+        "description": "Ready to set off on an adventure that your family will cherish for a lifetime? The CAMPERIENCE offers you an unrivalled caravanning experience, with something for every member of the family."
+    },
+    {
+        "title": "Scout Adventure",
+        "price": 300,
+        "location": "Marthrown of Mabie, near Dumfries",
+        "duration": "3days",
+        "img": "https://i.ibb.co/tmSnWJV/camping-5.jpg",
+        "description": "Be inspired; be different; be prepared. Scout Adventures is perfect for both Scouts and Guides. We know the programmes inside out and can help you work towards badges and awards."
+    },
+    {
+        "title": "Hiking To Lake",
+        "img": "https://i.ibb.co/wz1FqQh/camping-3.jpg",
+        "price": 250,
+        "location": "Knepp Estate, Horsham, West Susses",
+        "duration": "4days",
+        "description": "The hike around the Moraine Lake Shoreline is the easiest way to appreciate the beauty of this famous alpine lake"
+    },
+    {
+        "title": "Bike Tours",
+        "img": "https://i.ibb.co/645583D/camping-4.jpg",
+        "price": 200,
+        "location": "Clachtoll beach campsite, Lochinver, Highlands",
+        "duration": "3days",
+        "description": "Every ride has the potential to take you someplace new. And when you devote your vacation days to do nothing but eat, drink, and ride your way around an unfamiliar destination, that experience becomes next level."
+    },
+    {
+        "title": "Kids Fire Camp",
+        "img": "https://i.ibb.co/vvBKfy5/camping-2.jpg",
+        "price": 500,
+        "location": "Glenworth Valley, Central Coast.",
+        "duration": "5days",
+        "description": "​Fire Camp is a week of fun and excitement while learning all about the job of a firefighter. Fire Camp is water safety, first aid, rescue practices."
+    },
+    {
+        "title": "Rope Rock Climbing",
+        "img": "https://i.ibb.co/DWLT0V4/camping-6.jpg",
+        "price": 300,
+        "location": "Picnic Point Campground, Mimosa Rocks",
+        "duration": "3days",
+        "description": "Top rope climbing (or top roping) is a style in climbing in which the climber is securely attached to a rope which then passes up, through an anchor system at the top of the climb, and down to a belayer at the foot of the climb."
+    }
+]
