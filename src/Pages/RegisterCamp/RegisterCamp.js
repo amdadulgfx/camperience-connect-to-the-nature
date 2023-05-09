@@ -15,7 +15,7 @@ const RegisterCamp = () => {
     const { register, handleSubmit, setFocus, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://shrouded-journey-47554.herokuapp.com/registrations', { ...data, status: "Pending" })
+        axios.post('https://camperience.onrender.com/registrations', { ...data, status: "Pending" })
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Registration successfull');
@@ -25,7 +25,7 @@ const RegisterCamp = () => {
 
     };
     useEffect(() => {
-        const url = `https://shrouded-journey-47554.herokuapp.com/camps/${serviceId}`;
+        const url = `https://camperience.onrender.com/camps/${serviceId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))

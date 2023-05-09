@@ -10,7 +10,7 @@ const MyCamps = () => {
     const { user } = useAuth();
     const myCamps = camps.filter(camp => camp.email === user.email);
     useEffect(() => {
-        fetch('https://shrouded-journey-47554.herokuapp.com/registrations')
+        fetch('https://camperience.onrender.com/registrations')
             .then(res => res.json())
             .then(data => setCamps(data))
     }, [])
@@ -21,7 +21,7 @@ const MyCamps = () => {
         const proceed = window.confirm('Are you sure you want to cancel this camp?')
         if (proceed) {
 
-            const url = `https://shrouded-journey-47554.herokuapp.com/registrations/${id}`
+            const url = `https://camperience.onrender.com/registrations/${id}`
 
             fetch(url, {
                 method: 'DELETE'

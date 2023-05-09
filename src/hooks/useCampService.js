@@ -7,7 +7,7 @@ const useCampService = () => {
 
     useEffect(() => {
         setIsloading(true)
-        fetch('https://shrouded-journey-47554.herokuapp.com/camps')
+        fetch('https://camperience.onrender.com/camps')
             .then(res => res.json())
             .then(data => {
                 setServices(data)
@@ -16,7 +16,7 @@ const useCampService = () => {
 
     }, [])
     useEffect(() => {
-        fetch('https://shrouded-journey-47554.herokuapp.com/registrations')
+        fetch('https://camperience.onrender.com/registrations')
             .then(res => res.json())
             .then(data => setCamps(data))
     }, [])
